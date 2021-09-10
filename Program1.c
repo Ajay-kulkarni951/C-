@@ -1,17 +1,28 @@
+// 1.Program to divide two numbers
+
 #include<stdio.h>
 
-
+int Divide(int iNo1, int iNo2)
+{
+ int iAns = 0;
+ 
+ if(iNo2 == 0)
+ {
+ return -1;
+ }
+ 
+ iAns = iNo1 / iNo2;
+ 
+ return iAns;
+}
 int main()
 {
-	printf("Jay Ganesh\n");
-	
-	return 0;
-}
-/*
-Myexe -> OS -> main() -> End of main -> return 0 to OS(it indicates success)
-
-return from main to Operating System
-return 0 Successful Termination
-return 1 Abortive Termination
-return -1 Erronious Termination
-*/
+ int iValue1 = 15, iValue2 = 5;
+ int iRet = 0;
+ 
+ iRet = Divide(iValue1, iValue2);
+ 
+ printf("Division is %d", iRet);
+ 
+ return 0;
+} 
