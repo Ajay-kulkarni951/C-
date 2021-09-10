@@ -1,21 +1,44 @@
-// 5. Accept one number from user and print that number of * on screen.
+// Accept Number From User And Display the addition of All The Numbers Till That Number.
+// Input : 4
+// Output : 10 (1 + 2 + 3 + 4)
+
+// Input : -6
+// Output : 21 (1 + 2 + 3 + 4 + 5 + 6)
 
 #include<stdio.h>
 
-void Accept(int iNo)
+int Sum(int iValue)
 {
- int iCnt = 0;
- 
- for( iCnt = 1 ; iCnt <= iNo ; iCnt++ )
- {
- printf("*");
- }
- 
+	int iAdd = 0;
+	int iCnt = 0;
+	
+	if(iValue == 0)
+	{
+		return 0;
+	}
+	
+	if(iValue < 0)
+	{
+		iValue = -iValue;
+	}
+	
+	for(iCnt = 1; iCnt <= iValue; iCnt++)
+	{
+		iAdd = iAdd + iCnt;
+	}
+	return iAdd;
+	
 }
+
 int main()
 {
- int iValue = 0;
- iValue = 5;
- Accept(iValue);
- return 0;
+	int iNo = 0;
+	int iRet = 0;
+	
+	printf("Enter the number\n");
+	scanf("%d",&iNo);
+	iRet = Sum(iNo);
+	
+	printf("Addition is : %d\n",iRet);
+	return 0;
 }

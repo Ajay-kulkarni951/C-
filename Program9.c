@@ -1,39 +1,47 @@
-/*4. Accept two numbers from user and display first number in second
-number of times.
-Input : 12 5
-Output : 12 12 12 12 12 
-Input : -2 3
-Output : -2 -2 -2
-Input : 21 -3
-Output : 21 21 21
-Input : -2 0
-Output :
-*/
+// Accept percentage from user and check his passing criteria.
 
 #include<stdio.h>
 
-void Display( int iNo, int iFrequency)
+void CheckResult(int iMarks)
 {
- int i = 0;
- 
- for(i = 1; i <= iFrequency; i++)
- {
- printf("%d\n",iNo);
- }
- 
+	if( (iMarks < 0) || (iMarks > 100) )
+	{
+		printf("Invalid marks");
+		return;
+	}
+	if( (iMarks > 0) && (iMarks < 35) )
+	{
+		printf("Fail");
+	}
+	else if( (iMarks >= 35) && (iMarks < 50) )
+	{
+		printf("Passed with Pass Class");
+	}
+	else if( (iMarks >= 50)	&& (iMarks < 60) )
+	{
+		printf("Passed with Second Class");
+	}
+	else if( (iMarks >= 60) && (iMarks < 70) )
+	{
+		printf("Passed with First Class");
+	}
+	else 
+	{
+		printf("Passed with Distinction");
+	}
 }
+
 int main()
 {
- int iValue = 0;
- int iCount = 0;
- 
- printf("Enter number");
- scanf("%d" ,&iValue);
- 
- printf("Enter frequency");
- scanf("%d" ,&iCount);
- 
- Display(iValue, iCount);
- 
- return 0;
-} 
+	int iValue = 0;
+	
+	printf("Enter your marks\n");
+	scanf("%d",&iValue);
+	
+	CheckResult(iValue);
+	
+	return 0;
+}
+	
+	
+
